@@ -1,0 +1,27 @@
+{
+    "name": "4ernovm/whmcs-foundation",
+    "description": "Allows to work with addon pages in MVC manner",
+    "authors": [
+        { "name": "Michael Chernov", "email": "4ernovm@gmail.com" }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:4ernovm/whmcs-orm.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:4ernovm/whmcs-container.git"
+        }
+    ],
+    "require": {
+        "4ernovm/whm-container": "0.1.*",
+        "4ernovm/whm-orm": "0.1.*",
+        "symfony/http-foundation": "v2.6.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chernoff\\Foundation\\": "src/Chernoff/Foundation/"
+        }
+    }
+}

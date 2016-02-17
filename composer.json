@@ -15,8 +15,8 @@
         }
     ],
     "require": {
-        "4ernovm/whm-container": "0.1.*",
-        "4ernovm/whm-orm": "0.1.*",
+        "4ernovm/whm-container": "~0.1",
+        "4ernovm/whm-orm": "~0.1",
         "symfony/http-foundation": "v2.6.9"
     },
     "autoload": {

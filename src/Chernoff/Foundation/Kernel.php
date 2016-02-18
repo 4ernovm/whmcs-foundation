@@ -25,12 +25,13 @@ class Kernel
 
     /**
      * @param Request $request
+     * @param $defaultController
      * @return Response
      */
-    public function handle(Request $request)
+    public function handle(Request $request, $defaultController)
     {
         try {
-            $controller = $this->getController($request);
+            $controller = $this->getController($request, $defaultController);
 
             if (!$controller) {
                 throw new \RuntimeException('Unable to find the controller.');
@@ -50,17 +51,18 @@ class Kernel
 
             return $response;
         } catch (\Exception $e) {
-            $this->handleException($e);
+            return $this->handleException($e);
         }
     }
 
     /**
      * @param Request $request
-     * @return mixed|null
+     * @param $default
+     * @return string|null
      */
-    protected function getController(Request $request)
+    protected function getController(Request $request, $default)
     {
-        $name = $request->get("_controller");
+        $name = $request->get("_controller", $default);
 
         if (!$name) {
             return null;
@@ -79,10 +81,13 @@ class Kernel
     }
 
     /**
-     * @param \Exception $e
+     * @param $e
+     * @return Response
      */
     protected function handleException($e)
     {
-        $this->container->make("exceptionhandler")->handle($e);
+        $this->container->make("exception_handler")->handle($e);
+
+        return new Response($e->getMessage());
     }
 }

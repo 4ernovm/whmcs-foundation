@@ -5,16 +5,6 @@
     "authors": [
         { "name": "Michael Chernov", "email": "4ernovm@gmail.com" }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:4ernovm/whmcs-container.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:4ernovm/whmcs-orm.git"
-        }
-    ],
     "require": {
         "4ernovm/whmcs-container": "~0.1",
         "4ernovm/whmcs-orm": "~0.1",

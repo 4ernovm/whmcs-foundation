@@ -17,6 +17,8 @@ class ServiceProvider extends BaseProvider
      */
     public function register()
     {
+        require_once "helper_functions.php";
+
         $this->app->singleton("kernel", function() { return new Kernel($this->app); });
         $this->app->alias("kernel", 'Chernoff\Foundation\Kernel');
 

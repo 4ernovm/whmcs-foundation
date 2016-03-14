@@ -3,6 +3,9 @@
 namespace Chernoff\Foundation;
 
 use Chernoff\Container\ServiceProvider as BaseProvider;
+use Symfony\Component\Templating\Loader\ChainLoader;
+use Symfony\Component\Templating\PhpEngine;
+use Symfony\Component\Templating\TemplateNameParser;
 
 /**
  * Class ServiceProvider
@@ -24,6 +27,10 @@ class ServiceProvider extends BaseProvider
 
         $this->app->singleton("exception_handler", function() { return new ExceptionHandler; });
         $this->app->alias("exception_handler", 'Chernoff\Foundation\ExceptionHandler');
+
+        $this->app->bindShared("templating", function() {
+            return new PhpEngine(new TemplateNameParser, new ChainLoader);
+        });
     }
 
     /**
@@ -31,6 +38,6 @@ class ServiceProvider extends BaseProvider
      */
     public function provides()
     {
-        return array("kernel", "exception_handler");
+        return array("kernel", "exception_handler", "templating");
     }
 }

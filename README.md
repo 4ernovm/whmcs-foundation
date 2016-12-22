@@ -11,7 +11,7 @@ Add `4ernovm/whmcs-foundation` as a requirement to composer.json:
 ```json
 {
     "require": {
-        "4ernovm/whm-foundation": "0.1.*"
+        "4ernovm/whm-foundation": "0.2.*"
     }
 }
 ```

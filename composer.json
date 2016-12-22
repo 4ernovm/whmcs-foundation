@@ -6,10 +6,10 @@
         { "name": "Michael Chernov", "email": "4ernovm@gmail.com" }
     ],
     "require": {
-        "4ernovm/whmcs-container": "~0.1",
-        "4ernovm/whmcs-orm": "~0.1",
-        "symfony/http-foundation": "v2.6.*",
-        "symfony/templating": "2.6.*"
+        "4ernovm/whmcs-container": "~0.2",
+        "4ernovm/whmcs-orm": "~0.2",
+        "symfony/http-foundation": "v2.8.*",
+        "symfony/templating": "2.8.*"
     },
     "autoload": {
         "psr-4": {

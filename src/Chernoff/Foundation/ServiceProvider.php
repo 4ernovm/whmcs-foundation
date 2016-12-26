@@ -28,7 +28,7 @@ class ServiceProvider extends BaseProvider
         $this->app->singleton("exception_handler", function() { return new ExceptionHandler; });
         $this->app->alias("exception_handler", 'Chernoff\Foundation\ExceptionHandler');
 
-        $this->app->bindShared("templating", function() {
+        $this->app->singleton("templating", function() {
             return new PhpEngine(new TemplateNameParser, new ChainLoader);
         });
     }
